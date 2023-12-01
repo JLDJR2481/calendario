@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100px;
+}
+
+table th {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid black;
+}
+table tr #spring {
+  background-color: #00ff00;
+}
+table tr #summer {
+  background-color: #ff0000;
+}
+table tr #autumn {
+  background-color: #ff8000;
+}
+table tr #winter {
+  background-color: skyBlue;
+}
+
+/*# sourceMappingURL=calendario.css.map */
