@@ -1,0 +1,39 @@
+$block: block;
+$flex: flex;
+$center: center;
+$auto: auto;
+
+$springColor: #00ff00;
+$summerColor: #ff0000;
+$autumnColor: #ff8000;
+$winterColor: skyBlue;
+
+header {
+    display: $flex;
+    justify-content: $center;
+    text-align: $center;
+    align-items: $center;
+    height: 100px;
+}
+
+table {    
+    th {
+        text-align: $center;
+        vertical-align: middle;
+        border: 1px solid black;
+    }
+    tr #spring {
+        background-color: $springColor;
+    }
+    tr #summer {
+        background-color: $summerColor;
+    }
+    tr #autumn {
+        background-color: $autumnColor;
+    }
+    tr #winter {
+        background-color: $winterColor;
+    }
+}
+
+
