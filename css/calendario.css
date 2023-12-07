@@ -1,4 +1,5 @@
 header {
+  position: fixed;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -6,22 +7,118 @@ header {
   height: 100px;
 }
 
+table {
+  width: 75% !important;
+}
 table th {
   text-align: center;
   vertical-align: middle;
   border: 1px solid black;
+  font-size: 18px;
 }
-table tr #spring {
+table td {
+  border: 1px solid black;
+}
+table tr td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 32px;
+}
+table tr td.hoy.winter {
+  background-color: #30aadc !important;
+  font-weight: bold;
+  border: 2px solid black;
+}
+table tr td.hoy.spring {
+  background-color: #009900;
+  font-weight: bold;
+}
+table tr td.hoy.summer {
+  background-color: #998100;
+  font-weight: bold;
+}
+table tr td.hoy.autumn {
+  background-color: #994d00;
+  font-weight: bold;
+}
+table tr.spring.impar td.impar {
   background-color: #00ff00;
 }
-table tr #summer {
-  background-color: #ff0000;
+table tr.spring.par td.par {
+  background-color: #00ff00;
 }
-table tr #autumn {
+table tr.summer.impar td.impar {
+  background-color: #ffd700;
+}
+table tr.summer.par td.par {
+  background-color: #ffd700;
+}
+table tr.autumn.impar td.impar {
   background-color: #ff8000;
 }
-table tr #winter {
+table tr.autumn.par td.par {
+  background-color: #ff8000;
+}
+table tr.winter.impar td.impar {
   background-color: skyBlue;
+}
+table tr.winter.par td.par {
+  background-color: skyBlue;
+}
+
+#main-table.animated-calendar-right {
+  animation: moveCalendarRight ease-out 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#main-table.animated-calendar-left {
+  animation: moveCalendarLeft ease-out 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#main-table.animated-calendar-right-remove {
+  animation: moveCalendarRightRemove ease-out 0.5s;
+  animation-fill-mode: backwards;
+}
+
+#main-table.animated-calendar-left-remove {
+  animation: moveCalendarLeftRemove ease-out 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveCalendarRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes moveCalendarLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes moveCalendarRightRemove {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes moveCalendarLeftRemove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 /*# sourceMappingURL=calendario.css.map */
