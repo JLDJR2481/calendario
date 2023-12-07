@@ -2,38 +2,168 @@ $block: block;
 $flex: flex;
 $center: center;
 $auto: auto;
+$fixed: fixed;
+
+$fontSize18: 18px;
+$fontSize32: 32px;
+
+$px50: 50px;
 
 $springColor: #00ff00;
-$summerColor: #ff0000;
+$summerColor: #ffd700;
 $autumnColor: #ff8000;
 $winterColor: skyBlue;
 
+$todaySpringColor: darken($springColor, 20%);
+$todaySummerColor: darken($summerColor, 20%);
+$todayAutumnColor: darken($autumnColor, 20%);
+$todayWinterColor: darken($winterColor, 20%);
+
+$todayText: bold;
+
 header {
-    display: $flex;
-    justify-content: $center;
+  position: $fixed;
+  display: $flex;
+  justify-content: $center;
+  text-align: $center;
+  align-items: $center;
+  height: 100px;
+}
+
+table {
+  width: 75% !important;
+  th {
     text-align: $center;
-    align-items: $center;
-    height: 100px;
+    vertical-align: middle;
+    border: 1px solid black;
+    font-size: $fontSize18;
+  }
+  td {
+    border: 1px solid black;
+  }
+
+  tr {
+    td {
+      width: $px50;
+      height: $px50;
+      text-align: $center;
+      vertical-align: middle;
+      font-size: $fontSize32;
+    }
+
+    td.hoy.winter {
+      background-color: $todayWinterColor !important;
+      font-weight: $todayText;
+      border: 2px solid black;
+    }
+    td.hoy.spring {
+      background-color: $todaySpringColor;
+      font-weight: $todayText;
+    }
+    td.hoy.summer {
+      background-color: $todaySummerColor;
+      font-weight: $todayText;
+    }
+    td.hoy.autumn {
+      background-color: $todayAutumnColor;
+      font-weight: $todayText;
+    }
+  }
+  tr.spring.impar {
+    td.impar {
+      background-color: $springColor;
+    }
+  }
+
+  tr.spring.par {
+    td.par {
+      background-color: $springColor;
+    }
+  }
+
+  tr.summer.impar {
+    td.impar {
+      background-color: $summerColor;
+    }
+  }
+  tr.summer.par {
+    td.par {
+      background-color: $summerColor;
+    }
+  }
+  tr.autumn.impar {
+    td.impar {
+      background-color: $autumnColor;
+    }
+  }
+  tr.autumn.par {
+    td.par {
+      background-color: $autumnColor;
+    }
+  }
+  tr.winter.impar {
+    td.impar {
+      background-color: $winterColor;
+    }
+  }
+  tr.winter.par {
+    td.par {
+      background-color: $winterColor;
+    }
+  }
 }
 
-table {    
-    th {
-        text-align: $center;
-        vertical-align: middle;
-        border: 1px solid black;
-    }
-    tr #spring {
-        background-color: $springColor;
-    }
-    tr #summer {
-        background-color: $summerColor;
-    }
-    tr #autumn {
-        background-color: $autumnColor;
-    }
-    tr #winter {
-        background-color: $winterColor;
-    }
+#main-table.animated-calendar-right {
+  animation: moveCalendarRight ease-out 0.5s;
+  animation-fill-mode: forwards;
+}
+#main-table.animated-calendar-left {
+  animation: moveCalendarLeft ease-out 0.5s;
+  animation-fill-mode: forwards;
 }
 
+#main-table.animated-calendar-right-remove {
+  animation: moveCalendarRightRemove ease-out 0.5s;
+  animation-fill-mode: backwards;
+}
 
+#main-table.animated-calendar-left-remove {
+  animation: moveCalendarLeftRemove ease-out 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveCalendarRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes moveCalendarLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes moveCalendarRightRemove {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes moveCalendarLeftRemove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
