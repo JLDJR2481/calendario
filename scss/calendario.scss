@@ -57,15 +57,15 @@ table {
       border: 2px solid black;
     }
     td.hoy.spring {
-      background-color: $todaySpringColor;
+      background-color: $todaySpringColor !important;
       font-weight: $todayText;
     }
     td.hoy.summer {
-      background-color: $todaySummerColor;
+      background-color: $todaySummerColor !important;
       font-weight: $todayText;
     }
     td.hoy.autumn {
-      background-color: $todayAutumnColor;
+      background-color: $todayAutumnColor !important;
       font-weight: $todayText;
     }
   }

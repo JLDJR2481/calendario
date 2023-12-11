@@ -32,15 +32,15 @@ table tr td.hoy.winter {
   border: 2px solid black;
 }
 table tr td.hoy.spring {
-  background-color: #009900;
+  background-color: #009900 !important;
   font-weight: bold;
 }
 table tr td.hoy.summer {
-  background-color: #998100;
+  background-color: #998100 !important;
   font-weight: bold;
 }
 table tr td.hoy.autumn {
-  background-color: #994d00;
+  background-color: #994d00 !important;
   font-weight: bold;
 }
 table tr.spring.impar td.impar {
