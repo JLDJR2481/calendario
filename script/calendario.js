@@ -80,9 +80,6 @@ function inyectarHeader() {
 // Inyecta de forma automática la tabla con el mes y año actual y los heads de la tabla que indican los dias de la semana
 function inyectarTabla(mesActual, actualYear) {
 
-    mesActualCalendario = mesActual;
-    actualYearCalendario = actualYear;
-
     // Div
     let firstDiv = document.createElement("div");
     firstDiv.id = "main-table";
@@ -151,11 +148,6 @@ function inyectarDias(mesActual, actualYear) {
         // Si es el día actual, añade la clase "hoy"
         if (dia === new Date().getDate() && actualYear === new Date().getFullYear() && mesActual === new Date().getMonth() + 1) {
             celda.className = "hoy";
-        }
-
-        // Si no es el día actual, añade la clase "no-hoy"
-        else {
-            celda.className = "no-hoy";
         }
 
         // Añado el tipo de clase dependiendo del mes. Esto es para los estilos
